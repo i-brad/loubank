@@ -9,7 +9,7 @@ const MyTheme = {
   colors: {
     ...DefaultTheme.colors,
     primary: BrandColors.dark,
-    background: BrandColors.dark,
+    background: "#2C2C2C",
     text: BrandColors.white,
   },
 };

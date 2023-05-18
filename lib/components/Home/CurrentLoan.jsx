@@ -61,7 +61,7 @@ const LoanCard = () => {
         </View>
       </View>
       <View>
-        <Text style={styles.mainText}>$ 78,92</Text>
+        <Text style={styles.mainText}>$ 780.92</Text>
         <Text style={styles.subText}>Rate 3.5%</Text>
       </View>
     </View>
