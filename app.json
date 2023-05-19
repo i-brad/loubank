@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "loubank",
-    "slug": "loubank",
+    "name": "LouBank",
+    "slug": "LouBank",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
@@ -22,10 +22,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1E1F1F"
-      }
+      },
+      "package": "com.mickelson.loubank"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e6dcf67b-db3d-4cd0-b2f9-eb37c7925dbd"
+      }
     }
   }
 }
