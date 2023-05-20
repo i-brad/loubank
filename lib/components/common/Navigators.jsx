@@ -7,9 +7,12 @@ import {
 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import BudgetsScreen from "../../../screens/Budgets";
 import CardsScreen from "../../../screens/Cards";
 import HomeScreen from "../../../screens/Home";
+import MessagesScreen from "../../../screens/Messages";
 import SearchScreen from "../../../screens/Search";
+import SettingsScreen from "../../../screens/Settings";
 import { BrandColors } from "../../utils/BrandStyle";
 import { BackButton } from "./Buttons";
 import Header, { ProfileAvatar } from "./Header";
@@ -49,7 +52,7 @@ export function BottomTabNavigator() {
       />
       <Tab.Screen
         name="Budget"
-        component={HomeScreen}
+        component={BudgetsScreen}
         options={{
           tabBarIcon: (props) => (
             <SimpleLineIcons name="handbag" {...props} size={20} />
@@ -87,7 +90,7 @@ export function BottomTabNavigator() {
       />
       <Tab.Screen
         name="Message"
-        component={HomeScreen}
+        component={MessagesScreen}
         options={{
           tabBarIcon: (props) => (
             <AntDesign name="message1" {...props} size={20} />
@@ -96,7 +99,7 @@ export function BottomTabNavigator() {
       />
       <Tab.Screen
         name="Settings"
-        component={HomeScreen}
+        component={SettingsScreen}
         options={{
           tabBarIcon: (props) => (
             <MaterialCommunityIcons

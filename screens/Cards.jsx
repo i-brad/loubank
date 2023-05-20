@@ -1,12 +1,31 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import VisaCard from "../lib/components/Card/VisaCard";
+import BaseLayout from "../lib/layouts/BaseLayout";
+import { cards } from "../lib/models/cards";
 import { BrandColors } from "../lib/utils/BrandStyle";
 
 const Cards = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}></Text>
-    </View>
+    <BaseLayout style={styles.container}>
+      <View style={{ paddingLeft: 30 }}>
+        <FlatList
+          data={cards}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <VisaCard
+              colors={item.colors}
+              text={item.text}
+              amount={item.amount}
+              card_no={item.card_no}
+              card_style={index === cards.length - 1 ? { marginRight: 25 } : {}}
+            />
+          )}
+          keyExtractor={(item) => item.id}
+        />
+      </View>
+    </BaseLayout>
   );
 };
 
@@ -14,10 +33,6 @@ export default Cards;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: BrandColors.background,
-  },
-  text: {
-    color: BrandColors.white,
+    paddingTop: 40,
   },
 });

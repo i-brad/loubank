@@ -1,13 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
-import React, { useCallback, useState } from "react";
-import {
-  FlatList,
-  RefreshControl,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import React from "react";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import Currencies_metals from "../lib/components/Home/Currencies_metals";
 import CurrentLoan from "../lib/components/Home/CurrentLoan";
 import FinanceCard from "../lib/components/Home/FinanceCard";
@@ -16,29 +9,11 @@ import VisaCard from "../lib/components/Home/VisaCard";
 import { cards } from "../lib/models/cards";
 import { financeData } from "../lib/models/finance";
 import { BrandColors } from "../lib/utils/BrandStyle";
+import BaseLayout from "../lib/layouts/BaseLayout";
 
 const Home = ({ navigation }) => {
-  const [refreshing, setRefreshing] = useState(false);
-
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 2000);
-  }, []);
-
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={styles.container}
-      refreshControl={
-        <RefreshControl
-          colors={[BrandColors.dark]}
-          refreshing={refreshing}
-          onRefresh={onRefresh}
-        />
-      }
-    >
+    <BaseLayout>
       <Header navigation={navigation} />
       <View style={{ paddingLeft: 20 }}>
         <FlatList
@@ -78,7 +53,7 @@ const Home = ({ navigation }) => {
         <CurrentLoan />
         <Currencies_metals />
       </LinearGradient>
-    </ScrollView>
+    </BaseLayout>
   );
 };
 

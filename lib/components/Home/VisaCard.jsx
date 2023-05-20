@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: 11,
     lineHeight: 12,
-    fontWeight: "500",
+    fontWeight: 500,
   },
   cardAmount: {
     fontSize: 17,
